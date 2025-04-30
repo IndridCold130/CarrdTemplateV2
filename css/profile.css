@@ -1,0 +1,82 @@
+.profile-panel {
+    display: flex;
+    width: 1050px;
+    min-height: 500px;
+    margin: 5rem auto;
+    background: rgba(20, 20, 20, 0.95);
+    border: 2px solid #8f6b28;
+    box-shadow: 0 0 25px #00000088;
+    border-radius: 8px;
+    color: #e0e0e0;
+    font-family: 'Caudex', serif;
+    overflow: hidden;
+  }
+  
+  .profile-sidebar {
+    width: 300px;
+    background-color: rgba(28, 6, 6, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #6e5520;
+  }
+  
+  .profile-sidebar img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 6px;
+    box-shadow: 0 0 15px #000;
+  }
+  
+  .profile-content {
+    flex-grow: 1;
+    padding: 2.8rem;
+    font-size: 1.3rem;
+    text-align: left; /* <<< ADD THIS */
+    animation: fadeInText 0.5s ease-out forwards;
+    opacity: 0; /* start transparent */
+  }
+  .profile-content li,
+.profile-quote {
+  opacity: 0;
+  animation: fadeInText 0.9s ease-out forwards;
+}
+
+.profile-content li:nth-child(1) { animation-delay: 0.1s; }
+.profile-content li:nth-child(2) { animation-delay: 0.2s; }
+.profile-content li:nth-child(3) { animation-delay: 0.3s; }
+.profile-content li:nth-child(4) { animation-delay: 0.4s; }
+.profile-content li:nth-child(5) { animation-delay: 0.5s; }
+.profile-content li:nth-child(6) { animation-delay: 0.6s; }
+.profile-content li:nth-child(7) { animation-delay: 0.7s; }
+.profile-content li:nth-child(8) { animation-delay: 0.8s; }
+/* ... and so on */
+.profile-quote { animation-delay: 0.9s; }
+  
+  .profile-content h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: #ffd27f;
+    margin-bottom: 1rem;
+  }
+  
+  .profile-content ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .profile-content li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .profile-content strong {
+    color: #c2a55f;
+  }
+  
+  .profile-quote blockquote {
+    border-left: 3px solid #6e5520;
+    padding-left: 1rem;
+    font-style: italic;
+    color: #ccc;
+  }  

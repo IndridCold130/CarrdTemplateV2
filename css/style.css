@@ -1,0 +1,157 @@
+@font-face {
+    font-family: 'Caudex';
+    src: url('Fonts/Caudex-Regular.ttf') format('truetype');
+    font-weight: normal;
+  }
+  
+@font-face {
+    font-family: 'Caudex';
+    src: url('Fonts/Caudex-Bold.ttf') format('truetype');
+    font-weight: bold;
+  }
+
+/* Animation Keyframes */
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1, .site-title {
+  font-family: 'Cinzel', serif;
+}
+
+h1, .site-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem;
+  color: #f8f1e7; /* or a very pale gold or white */
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.4),
+    0 0 10px rgba(255, 255, 255, 0.3),
+    0 0 20px rgba(255, 220, 180, 0.2); /* soft warmish glow */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  /* Reset & base styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-image: url('assets/fantasybackground.png');
+    background-size: cover;            /* makes it fill the screen */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;      /* stays in place while scrolling */
+    background-color: #0b0b0b;         /* fallback if image doesn't load */
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0d0d0d;
+    color: #f0f0f0;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    
+    background: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0) 40%,    /* center = transparent */
+      rgba(0, 0, 0, 0.5) 70%,  /* mid area = semi-dark */
+      rgba(0, 0, 0, 0.8) 100%  /* edges = almost black */
+    );
+  }
+  
+  /* Sticky Navbar */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0; /* ← makes sure it starts at the edge */
+    width: 100%;
+    background-color: rgba(15, 15, 15, 0.95); /* dark translucent */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    padding: 1rem 2rem;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .logo {
+    font-family: 'Caudex', sans-serif;
+    font-size: 1.9rem;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    font-size: 1.2rem;
+  }
+  
+  .nav-links a {
+    font-family: 'Caudex', sans-serif;
+    text-decoration: none;
+    color: #cccccce8;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  
+  .nav-links a:hover {
+    font-weight: bold;
+    color: #a02020; /* or any accent color you want */
+  }
+
+  .ooc-list {
+    list-style-type: disc; /* or none if you want no bullet */
+    padding-left: 1.5rem;  /* indent */
+    margin-bottom: 1.5rem;
+    text-align: left;         /* force left alignment */
+    list-style-position: inside;
+    padding-left: 1rem;       /* slight padding inward */
+    margin: 1rem 0;
+  }
+  
+  .ooc-list li {
+    margin-bottom: 0.5rem; /* smaller gap between points */
+    line-height: 1.4;      /* slightly tighter lines */
+  }
+
+  .ooc-list li::marker {
+    color: #c2a55f; /* golden bullets */
+   /* color: #c2a55f; /* golden bullets */
+    font-size: 1.5rem;
+    content: "☩ "; /* replaces default dot */
+  }
+
+  .ooc-list li:hover {
+    color: #fff8dc;
+    text-shadow: 0 0 4px #d6b45f;
+    transition: 0.3s ease;
+  }
