@@ -155,3 +155,62 @@ body {
     text-shadow: 0 0 4px #d6b45f;
     transition: 0.3s ease;
   }
+
+  .fade-in {
+    animation: fadeIn 0.3s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  nav.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 11rem;
+    background-color: rgba(15, 15, 15, 0.95);
+    box-shadow: 0 2px 10px #00000066;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .site-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.3rem;
+    color: #fdf8ee;
+    text-shadow:
+      0 0 5px rgba(255, 255, 255, 0.3),
+      0 0 10px rgba(255, 255, 255, 0.2),
+      0 0 18px rgba(255, 240, 200, 0.15);
+    letter-spacing: 0.05em;
+  }
+  
+  nav.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 2.2rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav.navbar li a {
+    font-family: 'Caudex', serif;
+    color: #e0e0e0dc;
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: color 0.2s ease;
+  }
+  
+  nav.navbar li a:hover,
+  nav.navbar li a.active {
+    color: #b30000;
+    text-shadow: 0 0 5px rgba(52, 17, 17, 0.802);
+  }

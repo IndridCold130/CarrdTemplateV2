@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-  <title>FFXIV Character Page</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/profile.css" />
-  <script src="navbar.js"></script>
+  <link rel="stylesheet" href="css/lore.css" />
+
 </head>
+
 <body>
-  <script src="profile.js"></script>
+
+    <!-- Navbar container -->
+    <div id="navbar-container"></div>
+    <!-- Content will be injected here -->
+  <main id="content" class="fade-in"></main>
+    <!-- Scripts -->
+  <script src="navbar.js"></script> <!-- loads navbar -->
+  <script src="router.js"></script> <!-- handles navigation -->
+
 </body>
+
 </html>
 

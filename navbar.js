@@ -1,8 +1,8 @@
 // navbar.js
-window.addEventListener('DOMContentLoaded', () => {
-    fetch('navbar.html')
-      .then(res => res.text())
-      .then(data => {
-        document.body.insertAdjacentHTML('afterbegin', data);
-      });
-  });
+document.addEventListener("DOMContentLoaded", () => {
+  fetch('navbar.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar-container').innerHTML = html;
+    });
+});

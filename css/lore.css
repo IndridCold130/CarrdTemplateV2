@@ -12,70 +12,76 @@
 
 .lore-panel {
   display: flex;
-  width: 1200px;
-  height: 650px;
+  width: 1050px;
+  height: 600px;
   margin: 5rem auto;
   background: rgba(20, 20, 20, 0.95);
   border: 2px solid #8f6b28;
   box-shadow: 0 0 25px #00000088;
   border-radius: 8px;
-  overflow: hidden; /* keep for clipping, but no scroll */
+  overflow: hidden;
   color: #e0e0e0;
   font-family: 'Caudex', serif;
-  font-size: 1.15rem;
 }
-  
-  .lore-sidebar {
-    min-width: 200px;     /* prevents it from shrinking on smaller screens */
-    max-width: 200px;     /* prevents it from growing */
-    background-color: rgba(28, 6, 6, 0.85);
-    border-right: 1px solid #6e5520;
-  
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-  
-    height: 100%; /* important! */
-    font-size: 1.2rem;
+
+.lore-sidebar {
+  min-width: 220px;
+  max-width: 220px;
+  background-color: rgba(28, 6, 6, 0.85);
+  border-right: 1px solid #6e5520;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lore-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lore-sidebar li {
+  padding: 1rem;
+  border-bottom: 1px solid #333;
+  color: #c2a55f;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  text-align: center;
+}
+
+.lore-sidebar li:hover,
+.lore-sidebar li.active {
+  background-color: #2a1f0d;
+  color: #fff2b2;
+}
+
+.lore-content {
+  padding: 2rem;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.lore-content h2 {
+  margin-bottom: 1rem;
+  color: #ffd27f;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.lore-content p {
+  line-height: 1.6;
+  color: #ccc;
+  text-align: center;
+}
+
+/* Optional: fade in animation reused by lore.js */
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  
-  .lore-sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .lore-sidebar li {
-    padding: 1rem;
-    border-bottom: 1px solid #333;
-    color: #c2a55f;
-    cursor: pointer;
-    transition: background 0.2s ease, color 0.2s ease;
-  }
-  
-  .lore-sidebar li:hover,
-  .lore-sidebar li.active {
-    background-color: #2a1f0d;
-    color: #fff2b2;
-  }
-  
-  .lore-content {
-    padding: 2rem;
-    flex-grow: 1;
-    overflow-y: auto;
-    height: 100%;
-    scroll-behavior: smooth;
-    animation: fadeInText 1.5s ease-out forwards;
-  }
-  
-  .lore-content h2 {
-    margin-bottom: 1rem;
-    color: #ffd27f;
-    font-size: 1.8rem;
-  }
-  
-  .lore-content p {
-    line-height: 1.6;
-    color: #ccc;
-  }
+}
