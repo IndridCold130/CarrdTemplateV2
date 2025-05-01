@@ -41,7 +41,7 @@ function loadLore(filePath) {
 }
 
 function loadContent(route) {
-  const page = route || 'about';
+  const page = route || 'profile-panel';
 
   fetch(`pages/${page}.html`)
     .then(res => res.text())
