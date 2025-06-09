@@ -3,22 +3,25 @@
     width: 1050px;
     min-height: 500px;
     margin: 5rem auto;
-    background: rgba(20, 20, 20, 0.95);
+    background: var(--bg-panel);
+    /*background: rgba(20, 20, 20, 0.95);*/
     border: 0.1rem solid #7a5d34;
     box-shadow: 0 0 25px #ff161688;
     border-radius: 8px;
     color: #e0e0e0;
     font-family: 'Caudex', serif;
     overflow: hidden;
+    /* height is determined by tallest child */
+    align-items: stretch; /* ensures .profile-sidebar matches .profile-content height */
   }
   
   .profile-sidebar {
-    width: 300px;
-    background-color: #120a0a;
     display: flex;
-    justify-content: center;
     align-items: center;
-    border-right: 1px solid #6e5520;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    /* Remove any forced width or height */
   }
   
   .profile-sidebar img {
@@ -58,6 +61,9 @@
     font-size: 2.5rem;
     color: #ffd27f;
     margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9), 
+                 0 0 15px rgba(255, 200, 100, 0.7),
+                 0 0 5px rgba(255, 200, 100, 0.9);
   }
   
   .profile-content ul {

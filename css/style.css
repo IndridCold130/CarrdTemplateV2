@@ -1,3 +1,14 @@
+:root {
+  --bg-dark: #0e0c0d;
+  --bg-panel: #0f0b10; /* Replace this once you settle */
+  --bg-sidebar: #b900000c;
+  --text-light: #e0e0e0;
+  --accent-gold: #e0b95b;
+  --border-color1: #7a5d34;
+  --highlight-red: #a83248e6;
+  --shadow-soft: rgba(0, 0, 0, 0.3);
+}
+
 @font-face {
     font-family: 'Caudex';
     src: url('Fonts/Caudex-Regular.ttf') format('truetype');
@@ -7,6 +18,12 @@
 @font-face {
     font-family: 'Caudex';
     src: url('Fonts/Caudex-Bold.ttf') format('truetype');
+    font-weight: bold;
+  }
+
+  @font-face {
+    font-family: 'Carbonium';
+    src: url('Fonts/Carbonium-Bold.otf') format('truetype');
     font-weight: bold;
   }
 
@@ -165,6 +182,12 @@ body {
     to   { opacity: 1; transform: translateY(0); }
   }
 
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #42080c #1e1e1e;
+  }
+  
   html, body {
     margin: 0;
     padding: 0;
@@ -175,7 +198,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 11rem;
-    background-color: rgba(15, 15, 15, 0.95);
+    background-color: var(--bg-panel);
     box-shadow: 0 2px 10px #00000066;
     position: sticky;
     top: 0;
@@ -185,12 +208,12 @@ body {
   .site-title {
     font-family: 'Cinzel', serif;
     font-size: 2.3rem;
-    color: #fdf8ee;
+    color: #fff;
+    text-align: center;
     text-shadow:
-      0 0 5px rgba(255, 255, 255, 0.3),
-      0 0 10px rgba(255, 255, 255, 0.2),
-      0 0 18px rgba(255, 240, 200, 0.15);
-    letter-spacing: 0.05em;
+      3px 4px 0 #000,   /* base dark shadow */
+      4px 5px 2px rgba(0, 0, 0, 0.5); /* softer blur for glow */
+    letter-spacing: 1px;
   }
   
   nav.navbar ul {

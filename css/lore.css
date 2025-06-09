@@ -12,28 +12,37 @@
 
 .lore-panel {
   display: flex;
-  width: 1050px;
+  width: 1150px;
   height: 600px;
   margin: 5rem auto;
-  background: rgba(20, 20, 20, 0.95);
+  background-color: #0f0b10fb;
+  /*background: rgba(1, 1, 1, 0.859);*/
   /*border: 2px solid #8f6b28;*/
-  border: 0.1rem solid #7a5d34;
+  border: 0.1rem solid var(--border-color1);
   box-shadow: 0 0 25px #ff161688;
   border-radius: 8px;
   overflow: hidden;
   color: #e0e0e0;
   font-family: 'Caudex', serif;
+  font-family: 'Cinzel Decorative', serif;
 }
 
 .lore-sidebar {
   min-width: 220px;
   max-width: 220px;
   /*background-color: rgba(28, 6, 6, 0.85);*/
-  background-color: #180101; /* darker gothic black-red */
+  background-color: var(--bg-sidebar); /* darker gothic black-red */
   border-right: 1px solid #6e5520;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  /*MAKE BUTTON TEXT UNSELECTABLE */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /*MAKE BUTTON TEXT UNSELECTABLE */
 }
 
 .lore-sidebar ul {
@@ -43,6 +52,7 @@
 }
 
 .lore-sidebar li {
+  user-select: none;
   padding: 1rem;
   border-bottom: 1px solid #333;
   color: #c2a55f;
@@ -51,14 +61,23 @@
   text-align: center;
 }
 
-.lore-sidebar li:hover,
-.lore-sidebar li.active {
+.lore-sidebar li:hover{
   background-color: #2a1f0d;
   color: #fff2b2;
 }
+.lore-sidebar li.active {
+  background-color: #2a1f0d;
+  color: #fff2b2;
+  pointer-events: none;
+  background-color: #3a2810;
+  color: #fff2b2;
+  cursor: default;
+
+  text-shadow: 0 0 4px #ffd27f, 0 0 8px #ffd27f, 0 0 12px #ffd27f;
+}
 
 .lore-content {
-  padding: 2rem;
+  padding: 3rem;
   flex-grow: 1;
   overflow-y: auto;
 }
@@ -66,14 +85,15 @@
 .lore-content h2 {
   margin-bottom: 1rem;
   color: #ffd27f;
-  font-size: 1.8rem;
+  font-size: 2rem;
   text-align: center;
 }
 
 .lore-content p {
   line-height: 1.6;
   color: #ccc;
-  text-align: center;
+  font-size: 1.2rem;
+  text-align: left;
 }
 
 /* Optional: fade in animation reused by lore.js */
@@ -87,3 +107,54 @@
     transform: translateY(0);
   }
 }
+/* BOOK STYLE */
+/* BOOK STYLE */
+.chapter-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.chapter-text {
+  flex: 1;
+  color: #e6d4b0;
+  /*font-family: 'Caudex', serif;*/
+  font-family: 'Carbonium', serif;
+  line-height: 1.7;
+  font-size: 1.15rem;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.7), 0 0 4px #000000;
+}
+
+.chapter-image {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Fixed-height image, auto width */
+.chapter-image img {
+  height: 200px;          /* or whatever height you want */
+  width: auto;
+  max-width: 100%;        /* keep it from busting layout */
+  object-fit: contain;
+  border: 0.1rem solid var(--border-color1);
+  box-shadow: 0 0 12px rgba(0,0,0,0.7);
+  border-radius: 4px;
+}
+
+/* Flip content for left-aligned image */
+.column-left {
+  flex-direction: row-reverse;
+}
+
+/* Single column style */
+.column-full {
+  flex-direction: column;
+}
+
+.column-full .chapter-text {
+  max-width: 100%;
+}
+/* BOOK STYLE */
+/* BOOK STYLE */

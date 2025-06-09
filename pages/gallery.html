@@ -1,15 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-  <title>FFXIV Character Page</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/lore.css" />
-</head>
-<body>
-    <!-- Navbar will load here -->
-    <script src="navbar.js"></script>
-</body>
-</html>
+<section class="gallery-panel">
+    <aside class="gallery-sidebar">
+        <ul>
+            <li data-category="portraits" class="active">Portraits</li>
+            <li data-category="action">Action Shots</li>
+            <li data-category="landscapes">Landscapes</li>
+            <li data-category="artifacts">Lore Artifacts</li>
+            <li data-category="memories">Cursed Memories</li>
+            <li data-category="all">All</li>
+        </ul>
+    </aside>
+    <div class="gallery-content">
+        <div class="gallery-grid">
+            <div class="diablo-frame thumbnail" data-category="portraits">
+                <img src="../Design/portraits_1.png" alt="Portrait 1" class="gallery-thumbnail">
+            </div>
+            <div class="diablo-frame thumbnail" data-category="action">
+                <img src="../Design/action_1.png" alt="Action 1" class="gallery-thumbnail">
+            </div>
+            <div class="diablo-frame thumbnail" data-category="landscapes">
+                <img src="../Design/landscapes_1.png" alt="Landscape 1" class="gallery-thumbnail">
+            </div>
+            <div class="diablo-frame thumbnail" data-category="artifacts">
+                <img src="../Design/artifacts_1.png" alt="Artifact 1" class="gallery-thumbnail">
+            </div>
+            <div class="diablo-frame thumbnail" data-category="memories">
+                <img src="../Design/memories_1.png" alt="Memory 1" class="gallery-thumbnail">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-image" src="" alt="Expanded Image">
+  <div class="lightbox-nav left-arrow">&lsaquo;</div>
+  <div class="lightbox-nav right-arrow">&rsaquo;</div>
+</div>

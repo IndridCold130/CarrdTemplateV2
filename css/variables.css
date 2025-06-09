@@ -1,0 +1,365 @@
+/* Diablo-style UI Frame Reconstruction */
+
+@keyframes frameGlowPulse {
+    0%, 100% {
+      box-shadow: inset 0 0 10px #000, 0 0 12px rgba(255, 100, 100, 0.6);
+    }
+    50% {
+      box-shadow: inset 0 0 20px #000, 0 0 20px rgba(255, 0, 0, 0.85);
+    }
+  }
+  
+  .diablo-frame.portrait-frame {
+    animation: frameGlowPulse 3.5s infinite ease-in-out;
+  }
+
+.diablo-frame {
+    position: relative;
+    padding: 24px;
+    background:
+    url('./images/frame_tl.png') top left no-repeat,
+    url('./images/frame_tr.png') top right no-repeat,
+    url('./images/frame_bl.png') bottom left no-repeat,
+    url('./images/frame_br.png') bottom right no-repeat,
+    url('./images/top.png') top repeat-x,
+    url('./images/bottom.png') bottom repeat-x,
+    url('./images/left.png') left repeat-y,
+    url('./images/right.png') right repeat-y,
+    url('./images/fill.png') repeat;
+  
+    background-size:
+      18px 18px,
+      18px 18px,
+      18px 18px,
+      18px 18px,
+      70px 3px,
+      70px 3px,
+      3px 70px,
+      3px 70px,
+      auto;
+  
+    box-sizing: content-box;
+    color: #e6d4b0;
+    font-family: 'Cinzel Decorative', serif;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 2rem auto;
+    text-shadow: 1px 1px 1px #000;
+    box-shadow: inset 0 0 10px #000, 0 0 12px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Optional inner wrapper for content control */
+  .diablo-frame.content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .diablo-frame.portrait-frame {
+      /* display: inline-block;*/
+      display: inline-block; /* not 'inline' */
+      position: relative;
+      padding: 0;
+      margin: 0;
+      box-sizing: content-box;
+      animation: frameGlowPulse 3.5s infinite ease-in-out;
+
+    background:
+      url('./images/frame_tl.png') top left no-repeat,
+      url('./images/frame_tr.png') top right no-repeat,
+      url('./images/frame_bl.png') bottom left no-repeat,
+      url('./images/frame_br.png') bottom right no-repeat,
+      url('./images/top.png') top repeat-x,
+      url('./images/bottom.png') bottom repeat-x,
+      url('./images/left.png') left repeat-y,
+      url('./images/right.png') right repeat-y,
+      url('./images/fill.png') repeat !important;
+  
+    background-size:
+      18px 18px,
+      18px 18px,
+      18px 18px,
+      18px 18px,
+      70px 3px,
+      70px 3px,
+      3px 70px,
+      3px 70px,
+      auto;
+  
+  }
+
+  .diablo-frame.portrait-frame {
+    display: inline-block;
+    padding: 6px; /* for subtle breathing room inside frame */
+    height: auto;
+    width: auto;
+    padding: 3.5px; /* or 12px if that feels better */
+  }
+  
+  .diablo-frame.portrait-frame::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    animation: shimmerBorder 6s infinite linear;
+  }
+
+  
+.character-portrait {
+  height: 500px; /* or any fixed height you want */
+  width: auto;
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 0 3px #ff0000a3; /* optional for a soft glow */
+  padding: 1.5px;
+  }
+
+  .portrait-inner {
+    padding: 4px;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+  }
+
+  .gallery-panel {
+    display: flex;
+    width: 1150px;
+    height: auto;
+    margin: 5rem auto;
+    background-color: #0f0b10fb;
+    border: 0.1rem solid var(--border-color1);
+    box-shadow: 0 0 25px #ff161688;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .gallery-sidebar {
+  min-width: 220px;
+  max-width: 220px;
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid #6e5520;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+    font-family: 'Cinzel Decorative', serif;
+
+  /* MAKE BUTTON TEXT UNSELECTABLE */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  }
+
+  .gallery-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+  
+  .gallery-sidebar li {
+  user-select: none;
+  padding: 1rem;
+  border-bottom: 1px solid #333;
+  color: #c2a55f;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  text-align: center;
+  }
+  
+.gallery-sidebar li:hover {
+  background-color: #2a1f0d;
+  color: #fff2b2;
+}
+
+.gallery-sidebar li.active {
+  background-color: #3a2810;
+  color: #fff2b2;
+  pointer-events: none;
+  cursor: default;
+
+    text-shadow: 0 0 4px #ffd27f, 0 0 8px #ffd27f, 0 0 12px #ffd27f;
+
+  /* Glowing border effect */
+
+  /*animation: glowPulse 2.5s infinite alternate;*/
+}
+  
+  .gallery-content {
+    flex-grow: 1;
+    padding: 1.5rem;
+
+    min-height: 600px; /* Ensures a consistent base height */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 1rem;
+    justify-content: center;
+    align-items: start;
+
+    flex-grow: 1;
+    min-height: 600px; /* Consistent base height */
+  }
+  
+.diablo-frame.thumbnail {
+    width: 100%;
+    max-width: 250px;
+    padding: 5px;
+    border: 0.1rem solid var(--border-color1);
+    box-sizing: border-box;
+    box-shadow: inset 0 0 10px #000, 0 0 12px rgba(0, 0, 0, 0.6);
+    margin-bottom: 0;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    will-change: opacity, transform, box-shadow;
+    overflow: hidden;
+    position: relative;
+}
+
+  .diablo-frame.thumbnail.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Shimmer effect */
+.diablo-frame.thumbnail::after {
+    content: "";
+    position: absolute;
+    top: -150%;
+    left: -150%;
+    width: 400%;
+    height: 400%;
+    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    opacity: 0;
+    transform: rotate(25deg);
+    transition: opacity 0.4s ease, transform 0.6s ease;
+    pointer-events: none;
+}
+  
+  .gallery-thumbnail {
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+    display: block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .diablo-frame.thumbnail:hover .gallery-thumbnail {
+    box-shadow: 0 0 12px #ff1616ab;
+  }
+
+  .diablo-frame.thumbnail:hover::after {
+    opacity: 0.75;
+    transform: translateX(100%) translateY(100%);
+}
+
+/* Lightbox Styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 0 20px #ffd27f, 0 0 40px #ffd27f, 0 0 60px #ffd27f;
+  transition: transform 0.3s ease;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffd27f;
+  font-size: 3rem;
+  cursor: pointer;
+  user-select: none;
+  text-shadow: 0 0 10px #ffd27f, 0 0 20px #ffd27f, 0 0 30px #ffd27f;
+  transition: transform 0.2s ease;
+}
+
+.lightbox-nav:hover {
+  color: #ffae00;
+  text-shadow: 0 0 15px #ffae00, 0 0 25px #ffae00, 0 0 40px #ffae00;
+  /*transform: scale(1.1);*/
+}
+
+.lightbox .left-arrow {
+  left: 5%;
+}
+
+.lightbox .right-arrow {
+  right: 5%;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 3rem;
+  color: #ffd27f;
+  cursor: pointer;
+  user-select: none;
+  text-shadow: 0 0 10px #ffd27f, 0 0 20px #ffd27f, 0 0 30px #ffd27f;
+  transition: transform 0.3s ease;
+}
+
+.lightbox-close:hover {
+  color: #ffae00;
+  transform: scale(1.1);
+}
+
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 10px #ffd27f, 0 0 20px #ffd27f, 0 0 30px #ffd27f;
+    border-color: #ffd27f;
+  }
+  50% {
+    box-shadow: 0 0 15px #ffae00, 0 0 25px #ffae00, 0 0 40px #ffae00;
+    border-color: #ffae00;
+  }
+  100% {
+    box-shadow: 0 0 10px #ffd27f, 0 0 20px #ffd27f, 0 0 30px #ffd27f;
+    border-color: #ffd27f;
+  }
+}
+
+/* Responsive Scaling */
+@media (max-width: 1200px) {
+  .diablo-frame.thumbnail {
+      max-width: 250px;
+  }
+}
+
+@media (max-width: 800px) {
+  .diablo-frame.thumbnail {
+      max-width: 200px;
+  }
+}
+
+@media (max-width: 500px) {
+  .diablo-frame.thumbnail {
+      max-width: 150px;
+  }
+}
